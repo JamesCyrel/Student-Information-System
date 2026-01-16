@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+echo "Clearing previous caches..."
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan cache:clear
+
 echo "Running database migrations..."
 php artisan migrate --force
 
